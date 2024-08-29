@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
-    "serve": "node dist/index.js",
-    "start": "node src/index.js",
+    "serve": "nodemon src/index.ts",
+    "start": "nodemon src/index.ts",
     "dev": "nodemon src/index.ts"
   },
   "dependencies": {
