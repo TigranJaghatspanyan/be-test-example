@@ -15,7 +15,7 @@ export const authenticateToken = (
   jwt.verify(
     token,
     process.env.JWT_SECRET ?? "secret_jwt",
-    //@ts-ignore
+    // @ts-ignore
     (err, user: User) => {
       if (err) return res.status(403).json({ error: "Forbidden" });
       //@ts-ignore

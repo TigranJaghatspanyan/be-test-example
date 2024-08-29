@@ -4,7 +4,7 @@ import organizationRoutes from "./routes/organizationRoutes";
 import itemRoutes from "./routes/itemRoutes";
 import { AppDataSource } from "./data-source";
 import swaggerSetup from "./swagger";
-import { authenticateToken } from "../src/middleware/middleware";
+// import { authenticateToken } from "../src/middleware/middleware";
 
 const app: Application = express();
 const PORT = process.env.PORT || 3000;
@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
 app.use("/auth", userRoutes);
-app.use("/organization", authenticateToken, organizationRoutes);
-app.use("/item", authenticateToken, itemRoutes);
+app.use("/organization", organizationRoutes);
+app.use("/item", itemRoutes);
 app.use(swaggerSetup);
 
 app.use(
