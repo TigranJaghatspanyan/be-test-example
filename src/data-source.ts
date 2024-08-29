@@ -5,12 +5,11 @@ import { Item } from './entity/Items';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'admin',
-  password: 'admin',
-  database: 'mydatabase',
+  url: process.env.DATABASE_URL,
   entities: [User, Organization, Item],
   synchronize: true,
   logging: true,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
